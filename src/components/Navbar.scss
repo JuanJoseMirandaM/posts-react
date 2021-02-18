@@ -1,0 +1,11 @@
+.Navbar__brand {
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+
+  &:hover{
+    color: #ffffff;
+    text-decoration: none;
+  }
+}
