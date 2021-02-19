@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, {useState, useEffect} from 'react'
 import { Container } from 'reactstrap';
 import Post from '../components/Post';
+import styled from '@emotion/styled'
 
 const UserDetails = (props) => {
   const userId = props.match.params.userId;
@@ -20,7 +21,7 @@ const UserDetails = (props) => {
   const consultarAPIPosts = async () => {
     axios.get(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
     .then(({ data: posts}) => {
-      console.log(posts);
+      // console.log(posts);
       setPosts(posts);
     });
   }
@@ -34,7 +35,13 @@ const UserDetails = (props) => {
 
   return (
     <Container>
-      <h1>{name}</h1>
+      <h1>
+        {name}  
+      </h1>
+      {address ? <p><i className="fas fa-home"></i> {address.city} - {address.street}</p> : null}
+      {company ? <p><i className="far fa-building"></i> {company.name}</p> : null}
+      <hr/>
+      <h3>Post publicados</h3>
       <ul className="list-unstyled">
         {posts.map(post => {
           return (
