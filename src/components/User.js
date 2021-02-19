@@ -17,7 +17,6 @@ const User = ({user}) => {
   return (
     <UserListItem>
       <Gravatar
-        className="BadgesListItem__avatar"
         email={email}
       />
 
@@ -25,8 +24,8 @@ const User = ({user}) => {
         <strong>
           {name}
         </strong> <br/>
-        @{email} <br/>
-        {phone}
+        <i className="far fa-envelope"></i> {email} <br/>
+        <i className="fas fa-phone"></i> {phone}
       </div>
     </UserListItem>
   )

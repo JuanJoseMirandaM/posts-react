@@ -9,7 +9,7 @@ function Gravatar({email}) {
   const GravatarImg = styled.img`
     border-radius: 50%;
     background: #a3a3a3;
-    margin-right: 0.5rem;
+    margin-right: 1rem;
     width: 80px;
     height: 80px;
   `;

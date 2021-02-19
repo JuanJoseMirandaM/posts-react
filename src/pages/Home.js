@@ -15,7 +15,7 @@ const Home = () => {
 
   useEffect(() => {
     consultarAPI()
-  }, [])
+  }, []);
 
   const UsersList = styled.div`
     width: 100%;
