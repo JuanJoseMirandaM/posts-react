@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled';
 import { Button, Card, CardBody, UncontrolledCollapse } from 'reactstrap';
+import ListComments from './ListComments';
 
 const Post = ({post}) => {
   
   const {id, title, body} = post;
-  const [coments, setComents] = useState(false);
+  const [vercoments, setVercoments] = useState(false);
 
   const PostContainer = styled.li`
     padding-top: 30px;
@@ -25,11 +26,13 @@ const Post = ({post}) => {
       </p>
       <Button
         onClick={() => {
-          setComents(!coments);
+          setVercoments(!vercoments);
         }}
       >
-        Ver comentarios
+        {!vercoments? "Ver comentarios" : "Ocultar comentarios"}
       </Button>
+
+      {vercoments? <ListComments postId={id} /> : null}
 
       
     </PostContainer>
